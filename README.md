@@ -47,3 +47,34 @@
 5. 瀏覽所有訂票紀錄
 6. 儲存當前資料
 10. 離開系統
+```
+💡 開發心得與技術挑戰
+檔案流防呆機制：處理文件讀寫時（如 movies.txt 缺失），加強了串流狀態的判斷與例外處理。
+
+Iterator 失效問題 (Iterator Invalidation)：在實作退票機制時，利用 STL 迭代器走訪 vector 並同時進行 erase() 元素。開發過程中成功克服了迭代器失效的挑戰，更深刻理解了底層記憶體管理的運作。
+
+
+---
+
+## 步驟二：使用 Git 指令將專案與報告推上 GitHub
+
+打開你的終端機（或 Git Bash），`cd` 切換到該專案資料夾，依序輸入以下指令：
+
+```bash
+# 1. 初始化 Git 儲存庫（如果之前做過了，這步會自動忽略）
+git init
+
+# 2. 將包含程式碼與剛寫好的 README.md 檔案全部加入暫存區
+git add .
+
+# 3. 提交歷史紀錄
+git commit -m "feat: 新增電影院訂票系統程式碼與專題說明文件"
+
+# 4. 確保主分支名稱為 main
+git branch -M main
+
+# 5. 連結到你在 GitHub 建立好的空 Repo 網址（請替換成你的網址）
+git remote add origin https://github.com/你的帳號/你的專案儲存庫名稱.git
+
+# 6. 將進度推上 GitHub
+git push -u origin main
